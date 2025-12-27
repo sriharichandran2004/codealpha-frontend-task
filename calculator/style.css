@@ -1,0 +1,148 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    font-family: Arial, sans-serif;
+}
+
+/* Calculator box */
+.calculator {
+    background: #1e1e2f;
+    padding: 20px;
+    border-radius: 20px;
+    width: 300px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+    animation: borderGlow 3s infinite alternate;
+}
+
+@keyframes borderGlow {
+    from {
+        box-shadow: 0 0 20px #667eea;
+    }
+
+    to {
+        box-shadow: 0 0 35px #764ba2;
+    }
+}
+
+/* Display */
+.display {
+    width: 100%;
+    height: 60px;
+    background: #000;
+    color: #0f0;
+    text-align: right;
+    padding: 10px;
+    font-size: 2rem;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    overflow-x: auto;
+    box-shadow: inset 0 0 12px #0f0;
+}
+
+/* Buttons grid */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+/* Common button */
+button {
+    height: 55px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #fff;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    animation: blinkGlow 2s infinite alternate;
+}
+
+/* Button hover & press */
+button:hover {
+    transform: scale(1.08);
+}
+
+button:active {
+    transform: scale(0.92);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+/* Default blinking animation */
+@keyframes blinkGlow {
+    from {
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+    }
+
+    to {
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+    }
+}
+
+/* Number buttons */
+.number {
+    background: #2d2d44;
+    animation: numberBlink 1.8s infinite alternate;
+}
+
+@keyframes numberBlink {
+    from {
+        box-shadow: 0 0 6px #6c63ff;
+    }
+
+    to {
+        box-shadow: 0 0 18px #6c63ff;
+    }
+}
+
+/* Operator buttons */
+.operator {
+    background: #ff9800;
+    animation: operatorBlink 1.6s infinite alternate;
+}
+
+@keyframes operatorBlink {
+    from {
+        box-shadow: 0 0 6px #ff9800;
+    }
+
+    to {
+        box-shadow: 0 0 20px #ff9800;
+    }
+}
+
+/* Equal button */
+.equal {
+    background: #4caf50;
+    grid-column: span 2;
+    animation: equalBlink 1.2s infinite alternate;
+}
+
+@keyframes equalBlink {
+    from {
+        box-shadow: 0 0 10px #4caf50;
+    }
+
+    to {
+        box-shadow: 0 0 28px #4caf50;
+    }
+}
+
+/* Clear buttons */
+.clear {
+    background: #f44336;
+    animation: clearBlink 1.4s infinite alternate;
+}
+
+@keyframes clearBlink {
+    from {
+        box-shadow: 0 0 8px #f44336;
+    }
+
+    to {
+        box-shadow: 0 0 24px #f44336;
+    }
+}
